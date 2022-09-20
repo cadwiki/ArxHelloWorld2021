@@ -1,0 +1,6 @@
+$(AcadDir)$(AcadExe)
+
+arguments
+/product ACADM /language "en-US" /p "CADWRCD" /ld $(SolutionDir)$(Platform)\$(Configuration)\$(RDS)$(ProjectName).arx /b $(SolutionDir)run-unit-tests.scr 
+
+/product ACADM /language "en-US" /p "<<VANILLA>>" /ld $(SolutionDir)$(Platform)\$(Configuration)\$(RDS)$(ProjectName).arx /b $(SolutionDir)run-unit-tests.scr 

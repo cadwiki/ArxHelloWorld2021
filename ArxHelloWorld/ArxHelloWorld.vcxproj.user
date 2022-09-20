@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<ItemDefinitionGroup>
+  <PostBuildEvent>
+    <Command>echo $(SolutionDir)$(Platform)\$(Configuration)\$(RDS)$(ProjectName).arx</Command>
+    <Message>Post build event started</Message>
+  </PostBuildEvent>
+</ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
+	<PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerCommandArguments>/product ACADM /language "en-US" /p "&lt;&lt;VANILLA&gt;&gt;" /ld $(SolutionDir)$(Platform)\$(Configuration)\$(RDS)$(ProjectName).arx /b $(SolutionDir)run-unit-tests.scr </LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerAttach>false</LocalDebuggerAttach>
+  </PropertyGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

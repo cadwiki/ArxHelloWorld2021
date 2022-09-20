@@ -1,0 +1,2 @@
+(princ "\nrun-unit-tests-scr started.")
+CADW_ArxHelloWorldRunUnitTests
